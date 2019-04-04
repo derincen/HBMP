@@ -52,8 +52,8 @@ class StanfordNLI(data.TabularDataset):
 
     @classmethod
     def splits(cls, text_field, label_field, parse_field=None, root='.data',
-               train='snli_1.0_train.jsonl', validation='snli_1.0_dev.jsonl',
-               test='snli_1.0_test.jsonl'):
+               train='{}_train.jsonl'.format(dirname), validation='{}_dev.jsonl'.format(dirname),
+               test='{}_test.jsonl'.format(dirname)):
 
         path = cls.download(root)
 
@@ -113,8 +113,8 @@ class MultiNLI(data.TabularDataset):
 
     @classmethod
     def splits_matched(cls, text_field, label_field, id_field, parse_field=None, genre_field=None, root='.data',
-               train='multinli_1.0_train.jsonl', validation='multinli_1.0_dev_matched.jsonl',
-               test='multinli_1.0_dev_matched.jsonl'):
+               train='{}_1.0_train.jsonl'.format(name), validation='{}_1.0_dev_matched.jsonl'.format(name),
+               test='{}_1.0_dev_matched.jsonl'.format(name)):
 
         path = cls.download(root)
 
@@ -141,8 +141,8 @@ class MultiNLI(data.TabularDataset):
 
     @classmethod
     def splits_mismatched(cls, text_field, label_field, id_field, parse_field=None, genre_field=None, root='.data',
-               train='multinli_1.0_train.jsonl', validation='multinli_1.0_dev_mismatched.jsonl',
-               test='multinli_1.0_dev_mismatched.jsonl'):
+               train='{}_1.0_train.jsonl'.format(name), validation='{}_1.0_dev_mismatched.jsonl'.format(name),
+               test='{}_1.0_dev_mismatched.jsonl'.format(name)):
 
         path = cls.download(root)
 
@@ -180,8 +180,8 @@ class SciTail(data.TabularDataset):
 
     @classmethod
     def splits(cls, text_field, label_field, parse_field=None, root='.data',
-               train='scitail_1.0_train.txt', validation='scitail_1.0_dev.txt',
-               test='scitail_1.0_test.txt'):
+               train='{}_1.0_train.txt'.format(name), validation='{}_1.0_dev.txt'.format(name),
+               test='{}_1.0_test.txt'.format(name)):
 
         path = cls.download(root)
 
